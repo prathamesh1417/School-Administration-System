@@ -1,0 +1,54 @@
+<section class="bg-img absolute top-0 w-full h-screen -z-10"></section>
+<section
+  class="h-screen w-full flex justify-center items-center bg-[#00000054] z-10"
+  style="font-family: cursive"
+>
+  <div class="w-[30%] h-[60%] shadow rounded-[25px] flex flex-col items-center bg-[#ffffff67]">
+    <h1 class="text-[black] text-[35px] font-[500] my-10">Login Page</h1>
+    <form
+      class="form flex w-full items-center flex-col"
+      [formGroup]="ContactForm"
+      (ngSubmit)="login()"
+    >
+      <!-- User Name -->
+      <input
+        type="email"
+        class="text-[16px] text-white font-[400] mb-5 bg-[#ffffff3b] rounded-[50px] w-[17rem] px-7 outline-none py-3"
+        placeholder="Enter Username"
+        formControlName="email"
+      />
+      <!-- Password -->
+      <div class="w-[17rem] flex relative items-center">
+        <!-- type="text" -->
+        <input
+          class="text-[16px] text-white font-[400] bg-[#ffffff3b] rounded-[50px] w-full px-7 outline-none py-3"
+          placeholder="Enter Password"
+          formControlName="password"
+          [type]="type"
+        />
+
+        <img
+          class="absolute w-6 h-6 cursor-pointer right-4"
+          src="/assets/svgs/eye-off-outline.svg"
+          *ngIf="type === 'password'"
+          (click)="type = 'text'"
+        />
+        <img
+          *ngIf="type === 'text'"
+          (click)="type = 'password'"
+          class="absolute w-6 h-6 cursor-pointer right-4"
+          src="/assets/svgs/eye-outline.svg"
+        />
+      </div>
+      <p *ngIf="error_var" class="text-[red]   text-[13px] font-bold capitalize mt-2">wrong credentials !</p>
+
+
+      <!-- Login -->
+      <button
+        class="w-[12rem] bg-[#ffceb9] mt-10 text-[16px] font-[600] text-center py-2 rounded-[50px] btn"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</section>

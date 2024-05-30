@@ -1,0 +1,42 @@
+<div class="navbar w-full z-10 static top-0">
+  <div class="w-full flex justify-center py-4 bg-[#5555b1]">
+    <div
+      class="w-[95%] flex justify-start items-center relative overflow-hidden"
+    >
+      <div class="w-full">
+        <ul class="w-full flex justify-center items-center py-2">
+          <li class="li mx-3 text-[20px]" routerLink="">
+            <p class="w-full font-[600]">About Us</p>
+          </li>
+          <li class="li mx-3 text-[20px]" routerLink="/what-we-do">
+            <p class="w-full font-[600]">What We Do</p>
+          </li>
+          <li class="li mx-3 text-[20px]" routerLink="/infrastructure">
+            <p class="w-full font-[600]">Infrastructure</p>
+          </li>
+          <li class="li ml-3 text-[20px]" routerLink="/contact">
+            <p class="w-full font-[600]">Contact</p>
+          </li>
+          <li class="li absolute right-0 ml-3 px-5 bg-[#aeaa5e] text-[16px] font-[600] text-center py-1.5 rounded-[50px] " onclick="history.back()" >
+            <p class="w-full font-[600]">Log Out</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div
+    class="slider w3-animate-opacity w-auto h-screen relative overflow-hidden"
+    [class.hidden]="activeImageIndex !== i"
+    *ngFor="let images of sliderArray; let i = index"
+  >
+    <img
+      class="w-full zoom h-full object-cover"
+      loading="lazy"
+      [src]="images"
+      alt="slider Images"
+    />
+  </div>
+</section>
